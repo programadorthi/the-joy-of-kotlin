@@ -7,4 +7,4 @@ fun triple(n: Int) = n * 3
 fun compose(
     f: (Int) -> Int,
     g: (Int) -> Int
-): (Int) -> Int = TODO("Implement your solution")
+): (Int) -> Int = TODO("Implement your compose solution")

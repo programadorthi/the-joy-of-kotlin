@@ -3,10 +3,11 @@ kotlin = "1.5.32"
 kotest = "5.0.2"
 
 [libraries]
-kotest = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 
 [bundles]
-test = ["kotest"]
+test = ["kotest-runner"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+test-logger = { id = "com.adarshr.test-logger", version = "3.1.0" }
