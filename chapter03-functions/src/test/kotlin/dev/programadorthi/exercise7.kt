@@ -1,0 +1,18 @@
+package dev.programadorthi
+
+import io.kotest.core.spec.style.FunSpec
+import io.kotest.matchers.ints.shouldBeExactly
+import kotlin.random.Random
+
+class Exercise7Test : FunSpec({
+    val random = Random.Default
+    val f = { a: Int -> { b: Double -> { a * (1 + b / 100) } } }
+
+    repeat(6) {
+        test("partialA $it") {
+            val number = random.nextDouble(until = Double.MAX_VALUE)
+            val result = partialA(it, f)(number)
+            result shouldBeExactly f(it)(number)
+        }
+    }
+})
