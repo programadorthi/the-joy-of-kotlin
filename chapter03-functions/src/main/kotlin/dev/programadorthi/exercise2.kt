@@ -1,3 +1,8 @@
 package dev.programadorthi
 
-fun compose(): Unit = TODO("Implement a polymorphic one")
+fun <A, B, C> compose(
+    f: (B) -> C,
+    g: (A) -> B
+): (A) -> C = { x ->
+    f(g(x))
+}
