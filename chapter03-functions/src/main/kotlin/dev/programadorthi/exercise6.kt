@@ -1,3 +1,4 @@
 package dev.programadorthi
 
-fun <F, G, H> higherAndThen() = TODO("Implement your version")
+fun <F, G, H> higherAndThen(): ((F) -> G) -> ((G) -> H) -> (F) -> H =
+    { f -> { g -> { h -> g(f(h)) } } }
