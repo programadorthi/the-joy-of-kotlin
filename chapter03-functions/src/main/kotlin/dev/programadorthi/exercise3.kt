@@ -1,3 +1,7 @@
 package dev.programadorthi
 
-val add = TODO("Implement add operation")
+val add: (Int) -> (Int) -> Int = { a ->
+    { b ->
+        a + b
+    }
+}
