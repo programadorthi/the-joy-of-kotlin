@@ -1,4 +1,4 @@
 package dev.programadorthi
 
-fun <A, B, C> higherCompose() =
-    TODO("Implement polymorphic version")
+fun <F, G, H> higherCompose(): ((G) -> H) -> ((F) -> G) -> (F) -> H =
+    { f -> { g -> { h -> f(g(h)) } } }
