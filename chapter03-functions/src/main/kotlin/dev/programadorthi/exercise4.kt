@@ -1,7 +1,10 @@
 package dev.programadorthi
 
-val square: (Int) -> Int = { it * it }
-val triple: (Int) -> Int = { it * 3 }
+// Integer Unary Operator
+typealias IntUnaryOp = (Int) -> Int
 
-val compose: ((Int) -> Int) -> ((Int) -> Int) -> (Int) -> Int =
+val square: IntUnaryOp = { it * it }
+val triple: IntUnaryOp = { it * 3 }
+
+val compose: (IntUnaryOp) -> (IntUnaryOp) -> IntUnaryOp =
     { f -> { g -> { h -> f(g(h)) } } }
