@@ -1,6 +1,6 @@
 package dev.programadorthi
 
 fun <F, G, H> partialB(
-    value: F,
+    value: G,
     f: (F) -> (G) -> H
-): (G) -> H = TODO("Implement your version")
+): (F) -> H = { a -> f(a)(value) }

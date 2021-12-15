@@ -11,7 +11,7 @@ class Exercise8Test : FunSpec({
     repeat(6) {
         test("partialA $it") {
             val number = random.nextDouble(until = Double.MAX_VALUE)
-            val result = partialB(it, f)(number)
+            val result = partialB(number, f)(it)
             result shouldBeExactly f(it)(number)
         }
     }
