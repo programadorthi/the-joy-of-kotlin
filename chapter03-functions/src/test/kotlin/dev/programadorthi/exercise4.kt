@@ -6,9 +6,9 @@ import io.kotest.matchers.ints.shouldBeExactly
 class Exercise4Test : FunSpec({
     repeat(6) {
         test("curring $it") {
-            val compose = compose(::square, ::triple)(it)
+            val compose = compose(square)(triple)
             val square = square(triple(it))
-            compose shouldBeExactly square
+            compose(it) shouldBeExactly square
         }
     }
 })
