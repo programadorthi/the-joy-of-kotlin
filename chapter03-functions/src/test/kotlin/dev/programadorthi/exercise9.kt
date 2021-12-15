@@ -14,7 +14,7 @@ class Exercise9Test : FunSpec({
             val b = random.nextDouble(until = Double.MAX_VALUE)
             val c = random.nextULong().toString()
             val d = random.nextBoolean()
-            val result = func(a, b, c, d)
+            val result = curried<Int, Double, String, Boolean>()(a)(b)(c)(d)
             result shouldBeEqualIgnoringCase "$a, $b, $c, $d"
         }
     }
