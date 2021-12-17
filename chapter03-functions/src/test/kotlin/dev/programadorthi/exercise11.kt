@@ -11,7 +11,7 @@ class Exercise11Test : FunSpec({
     val f = { a: Int, b: Double -> a * (1 + b / 100) }
 
     repeat(6) {
-        test("curry $it") {
+        test("swapArgs $it") {
             val a = random.nextInt()
             val b = random.nextDouble(until = Double.MAX_VALUE)
             val result = swapArgs(curry(f))(b)(a)
