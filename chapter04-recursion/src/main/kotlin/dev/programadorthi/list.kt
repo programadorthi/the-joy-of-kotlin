@@ -10,10 +10,5 @@ fun <T> List<T>.tail(): List<T> = when {
     else -> drop(1)
 }
 
-fun sum(list: List<Int>): Int {
-    tailrec fun sumTail(lst: List<Int>, acc: Int): Int = when {
-        lst.isEmpty() -> acc
-        else -> sumTail(lst.tail(), acc + lst.head())
-    }
-    return sumTail(list, 0)
-}
+fun sum(list: List<Int>): Int =
+    foldLeft(list, 0, Int::plus)

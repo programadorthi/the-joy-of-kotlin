@@ -1,10 +1,6 @@
 package dev.programadorthi
 
-fun <T> makeString(list: List<T>, delim: String): String {
-    tailrec fun corecursive(lst: List<T>, acc: String): String = when {
-        lst.isEmpty() -> acc
-        acc.isEmpty() -> corecursive(lst.tail(), "${lst.head()}")
-        else -> corecursive(lst.tail(), "$acc$delim${lst.head()}")
+fun <T> makeString(list: List<T>, delim: String): String =
+    foldLeft(list, "") { s, t ->
+        if (s.isEmpty()) "$t" else "$s$delim$t"
     }
-    return corecursive(list, "")
-}

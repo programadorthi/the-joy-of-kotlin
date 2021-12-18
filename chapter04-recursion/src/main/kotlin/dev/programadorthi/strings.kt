@@ -4,18 +4,8 @@ fun append(s: String, c: Char): String = "$s$c"
 
 fun prepend(s: String, c: Char): String = "$c$s"
 
-fun string(list: List<Char>): String {
-    tailrec fun toString(list: List<Char>, s: String): String = when {
-        list.isEmpty() -> s
-        else -> toString(list.tail(), append(s, list.head()))
-    }
-    return toString(list, "")
-}
+fun string(list: List<Char>): String =
+    foldLeft(list, "", ::append)
 
-fun stringReversed(list: List<Char>): String {
-    tailrec fun toString(list: List<Char>, s: String): String = when {
-        list.isEmpty() -> ""
-        else -> toString(list.tail(), prepend(s, list.head()))
-    }
-    return toString(list, "")
-}
+fun stringReversed(list: List<Char>): String =
+    foldLeft(list, "", ::prepend)
