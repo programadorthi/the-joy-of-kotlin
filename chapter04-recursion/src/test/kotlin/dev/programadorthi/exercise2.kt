@@ -6,8 +6,9 @@ import io.kotest.matchers.ints.shouldBeExactly
 class Exercise2Test : FunSpec({
     repeat(30) {
         test("factorial $it") {
-            val factorial = factorial(it + 1)
-            factorial shouldBeExactly factorial(it) * (it + 1)
+            val number = it + 1 // repeat is 0 <= value < times
+            val factorial = factorial(number + 1)
+            factorial shouldBeExactly factorial(number) * (number + 1)
         }
     }
 })
