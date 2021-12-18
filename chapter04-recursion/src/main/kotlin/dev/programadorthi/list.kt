@@ -11,4 +11,4 @@ fun <T> List<T>.tail(): List<T> = when {
 }
 
 fun sum(list: List<Int>): Int =
-    foldLeft(list, 0, Int::plus)
+    foldRight(list, 0, Int::plus)

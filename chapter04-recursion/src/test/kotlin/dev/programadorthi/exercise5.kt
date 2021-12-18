@@ -6,12 +6,12 @@ import io.kotest.matchers.string.shouldBeEqualIgnoringCase
 
 class Exercise5Test : FunSpec({
     repeat(6) { n ->
-        test("string foldLeft $n") {
+        test("string $n") {
             val list = Array(n) { n.toChar() }.toList()
             string(list) shouldBeEqualIgnoringCase list.fold("") { s, c -> s + c }
         }
 
-        test("sum foldLeft $n") {
+        test("sum $n") {
             val list = Array(n) { it + n }.toList()
             sum(list) shouldBeExactly list.fold(0) { s, c -> s + c }
         }
